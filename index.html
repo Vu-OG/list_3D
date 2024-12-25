@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>List 3D</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            font-size: 3vh;
+        }
+
+        ul {
+            position: fixed;
+            transform: rotateZ(-10deg) rotateY(40deg) rotateX(-16deg);
+            translate: -50% -50%;
+            top: 55%;
+            left: 55%;
+            transform-style: preserve-3d;
+            perspective: 200vw;
+        }
+
+        li {
+            height: 7vh;
+            position: relative;
+            transform-style: preserve-3d;
+            transition: 0.5s;
+        }
+
+        li * {
+            transition: 0.5s;
+            color: white;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        li .front {
+            display: flex;
+            align-items: center;
+            box-sizing: border-box;
+            padding-left: 4vh;
+            height: calc(7vh + 00.1vh);
+            width: calc(6vh * 6);
+            background: rgb(53, 53, 53);
+        }
+
+        li .left {
+            position: absolute;
+            width: calc(7vh * 1.5 + 0.1vh);
+            height: calc(7vh + 0.1vh);
+            background-color: rgb(39, 39, 39);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transform: rotateY(-90deg);
+            left: calc(-7vh * 1.5 / 2);
+            top: 0;
+            translate: 0 0 calc(-7vh * 1.5 / 2);
+        }
+
+        li .top {
+            width: calc(6vh * 6 - 0.3vh);
+            height: calc(11vh + 00.1vh);
+            background-color: rgb(49, 49, 49);
+            position: absolute;
+            top: 0;
+            left: 0;
+            transform: rotateX(-90deg);
+            translate: 0 -50% calc(-7vh * 1.5 / 2);
+        }
+
+        li:hover {
+            transform: translateX(-10vh);
+        }
+
+        li:hover .front {
+            background-color: rgb(104, 57, 214);
+        }
+
+        li:hover .left {
+            background-color: rgb(63, 33, 133);
+        }
+
+        li:hover .top {
+            background-color: rgb(73, 43, 163);
+        }
+    </style>
+    <ul>
+        <li class="home">
+            <div class="top"></div>
+            <div class="front">
+                Home page
+            </div>
+            <div class="left">
+                <i class="fa-solid fa-house"></i>
+            </div>
+        </li>
+        <li class="news">
+            <div class="top"></div>
+            <div class="front">
+                News
+            </div>
+            <div class="left">
+                <i class="fa-solid fa-newspaper"></i>
+            </div>
+        </li>
+        <li class="blos">
+            <div class="top"></div>
+            <div class="front">
+                Blogs
+            </div>
+            <div class="left">
+                <i class="fa-solid fa-blog"></i>
+            </div>
+        </li>
+        <li class="contact">
+            <div class="top"></div>
+            <div class="front">
+                Blogs
+            </div>
+            <div class="left">
+                <i class="fa-solid fa-address-book"></i>
+            </div>
+        </li>
+        <li class="help">
+            <div class="top"></div>
+            <div class="front">
+                Help
+            </div>
+            <div class="left">
+                <i class="fa-solid fa-handshake-angle"></i>
+            </div>
+        </li>
+    </ul>
+</body>
+
+</html>
